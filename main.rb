@@ -1,7 +1,7 @@
 require 'rainbow'
 
 puts "What would you like to do?".foreground(:red)
-puts "Use (b)asic, (a)dvanced, (bm)i, (m)ortgage, (q)uit".background(:red).foreground(:green)
+puts "Use (b)asic, (a)dvanced, (bm)i, (m)ortgage, (t)rip, (q)uit".background(:red).foreground(:green)
 you = gets.chomp.downcase
 
 def adv_calc
@@ -71,6 +71,36 @@ def mort_calc
   gets
 end
 
+def trip_calc
+  puts "This is a trip calculator."
+  print "Please enter your distance (in miles) "
+  distance = gets.chomp.to_f
+  print "Please enter the Miles per gallon "
+  mpg = gets.chomp.to_f
+  print "Please enter the Cost per gallon "
+  cpg = gets.chomp.to_f
+  print "Please enter the mph "
+  mph = gets.chomp.to_f
+
+  def trip_time_calc (distance, mph)
+    distance / mph
+  end
+
+  def trip_cost_calc (cpg, mpg, distance)
+    (cpg / mpg) * distance
+  end
+
+  if mph > 60
+    mpg = mpg - (2 * (mph - 60))
+  end
+
+  trip_time = trip_time_calc(distance, mph)
+
+  trip_cost = trip_cost_calc(cpg, mpg, distance)
+
+  puts "Your trip will take #{trip_time.round(2)} hours and cost $#{trip_cost.round(2)}."
+end
+
 while you != "q"
   if you == "b"
     basic_calc
@@ -80,9 +110,10 @@ while you != "q"
     bmi_calc
   elsif you == "m"
     mort_calc
+  elsif you == "t"
   end
     puts "What would you like to do?".foreground(:green)
-    puts "Use (b)asic, (a)dvanced, (bm)i, (m)ortgage, (q)uit".background(:red)
+    puts "Use (b)asic, (a)dvanced, (bm)i, (m)ortgage, (t)rip, (q)uit".background(:red)
     you = gets.chomp.downcase
 end
 
