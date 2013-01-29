@@ -1,6 +1,6 @@
 puts "What would you like to do?"
-puts "Use Basic Calculator, Use Advanced Calculator, Quit?"
-you = gets.chomp
+puts "Use Basic Calculator(bc), Use Advanced Calculator(ac), Quit(q)?"
+you = gets.chomp.downcase
 
 def advcalc
   print "Welcome to the Advanced Calculator. Would you like to take an nth (p)ower or the square (r)oot?"
@@ -18,7 +18,7 @@ def advcalc
     number = gets.chomp.to_i
     puts "The answer is #{number**(1.0/2)}."
   else
-    puts 'Error. Please enter "p" pr "r" to run the use the advanced calculator.'
+    puts 'Error. Please enter "p" "pr" "r" to run the use the advanced calculator.'
   end
 end
 
@@ -46,20 +46,15 @@ def basic_calc
   end
 end
 
-While you != "quit"
-  # if you == "Basic Calculator"
-  #   basic_calc
-  # elsif you == "Advanced Calculator"
-  #   advcalc
-  # else
-  #   puts "What would you like to do?"
-  #   puts "Use Basic Calculator, Use Advanced Calculator, Quit?"
-  #   you = gets.chomp
-  # end
-  puts "test"
-  puts "What would you like to do?"
-  puts "Use Basic Calculator, Use Advanced Calculator, Quit?"
-  you = gets.chomp
+while you != "q"
+  if you == "bc"
+    basic_calc
+  elsif you == "ac"
+    advcalc
+  end
+    puts "What would you like to do?"
+    puts "Use Basic Calculator, Use Advanced Calculator, Quit?"
+    you = gets.chomp.downcase
 end
 
-puts "Test"
+puts "Thank you"
