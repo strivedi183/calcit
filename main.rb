@@ -1,3 +1,7 @@
+puts "What would you like to do?"
+puts "Use Basic Calculator, Use Advanced Calculator, Quit?"
+you = gets.chomp
+
 def advcalc
   print "Welcome to the Advanced Calculator. Would you like to take an nth (p)ower or the square (r)oot?"
   answer = gets.chomp
@@ -15,6 +19,8 @@ def advcalc
     puts "The answer is #{number**(1.0/2)}."
   else
     puts 'Error. Please enter "p" pr "r" to run the use the advanced calculator.'
+  end
+end
 
 def basic_calc
   # User chooses math action and enters their numbers
@@ -39,3 +45,21 @@ def basic_calc
       print "error"
   end
 end
+
+While you != "quit"
+  # if you == "Basic Calculator"
+  #   basic_calc
+  # elsif you == "Advanced Calculator"
+  #   advcalc
+  # else
+  #   puts "What would you like to do?"
+  #   puts "Use Basic Calculator, Use Advanced Calculator, Quit?"
+  #   you = gets.chomp
+  # end
+  puts "test"
+  puts "What would you like to do?"
+  puts "Use Basic Calculator, Use Advanced Calculator, Quit?"
+  you = gets.chomp
+end
+
+puts "Test"
