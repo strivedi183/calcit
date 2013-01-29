@@ -4,7 +4,7 @@ puts "What would you like to do?".foreground(:red)
 puts "Use (b)asic, (a)dvanced, (bm)i, (m)ortgage, (q)uit".background(:red).foreground(:green)
 you = gets.chomp.downcase
 
-def advcalc
+def adv_calc
   print "Welcome to the Advanced Calculator. Would you like to take an nth (p)ower or the square (r)oot? "
   answer = gets.chomp
   if answer == "p"
@@ -57,15 +57,28 @@ def bmi_calc
   gets
 end
 
+def mort_calc
+  puts "Welcome to the mortage calculator."
+  print "Please enter your loan principal. "
+  loan_principal = gets.chomp.to_f
+  print "Please enter your interest rate. "
+  interest_rate = gets.chomp.to_f
+  print "Please enter the number of payments you have made. "
+  num_payments = gets.chomp.to_f
+  calc = (1 + interest_rate)**num_payments
+  monthly_payment = loan_principal * ((interest_rate * calc) / (calc - 1))
+  puts "Your monthly mortage payment is $#{monthly_payment.round(2)}"
+end
+
 while you != "q"
   if you == "b"
     basic_calc
   elsif you == "a"
-    advcalc
+    adv_calc
   elsif you == "bm"
     bmi_calc
   elsif you == "m"
-    # mortgage function
+    mort_calc
   end
     puts "What would you like to do?".foreground(:red)
     puts "Use (b)asic, (a)dvanced, (bm)i, (m)ortgage, (q)uit".background(:green)
