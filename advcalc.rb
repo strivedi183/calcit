@@ -17,3 +17,5 @@ def advcalc
     puts 'Error. Please enter "p" pr "r" to run the use the advanced calculator.'
   end
 end
+
+
