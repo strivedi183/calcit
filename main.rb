@@ -3,7 +3,7 @@ puts "Use Basic Calculator(bc), Use Advanced Calculator(ac), Quit(q)?"
 you = gets.chomp.downcase
 
 def advcalc
-  print "Welcome to the Advanced Calculator. Would you like to take an nth (p)ower or the square (r)oot?"
+  print "Welcome to the Advanced Calculator. Would you like to take an nth (p)ower or the square (r)oot? "
   answer = gets.chomp
   if answer == "p"
     puts "Let's take the nth power of a number."
@@ -53,7 +53,7 @@ while you != "q"
     advcalc
   end
     puts "What would you like to do?"
-    puts "Use Basic Calculator, Use Advanced Calculator, Quit?"
+    puts "Use Basic Calculator(bc), Use Advanced Calculator(ac), Quit(q)?"
     you = gets.chomp.downcase
 end
 
