@@ -1,7 +1,7 @@
 require 'rainbow'
 
-puts "What would you like to do?"
-puts "Use Basic Calculator(bc), Use Advanced Calculator(ac), Quit(q)?"
+puts "What would you like to do?".foreground(:red)
+puts "Use (b)asic, (a)dvanced, (bm)i, (m)ortgage, (q)uit".background(:red).foreground(:green)
 you = gets.chomp.downcase
 
 def advcalc
@@ -31,7 +31,7 @@ def basic_calc
   print "Please enter your first number: "
   first_number = gets.chomp.to_i
   print "Please enter your second number: "
-  second_number = gets.chomp.to_i
+  second_number = gets.chomp.to_f
 
   #This is where the numbers have math actions done against them
   case math_action
@@ -58,15 +58,17 @@ def bmi_calc
 end
 
 while you != "q"
-  if you == "bc"
+  if you == "b"
     basic_calc
-  elsif you == "ac"
+  elsif you == "a"
     advcalc
   elsif you == "bm"
     bmi_calc
+  elsif you == "m"
+    # mortgage function
   end
-    puts "What would you like to do?"
-    puts "Use Basic Calculator(bc), Use Advanced Calculator(ac), Quit(q)?"
+    puts "What would you like to do?".foreground(:red)
+    puts "Use (b)asic, (a)dvanced, (bm)i, (m)ortgage, (q)uit".background(:green)
     you = gets.chomp.downcase
 end
 
