@@ -5,7 +5,7 @@ puts "Use (b)asic, (a)dvanced, (bm)i, (m)ortgage, (q)uit".background(:red).foreg
 you = gets.chomp.downcase
 
 def advcalc
-  print "Welcome to the Advanced Calculator. Would you like to take an nth (p)ower or the square (r)oot?"
+  print "Welcome to the Advanced Calculator. Would you like to take an nth (p)ower or the square (r)oot? "
   answer = gets.chomp
   if answer == "p"
     puts "Let's take the nth power of a number."
