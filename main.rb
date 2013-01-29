@@ -53,7 +53,7 @@ def bmi_calc
   weight = gets.chomp.to_f
   print "What is your height? (inches/meters) "
   height = gets.chomp.to_f
-  puts "Your BMI is #{weight/(height*2)} (Press any key to continue)"
+  puts "Your BMI is #{weight/(height*2)} (Press Enter key to continue)"
   gets
 end
 
@@ -67,8 +67,8 @@ while you != "q"
   elsif you == "m"
     # mortgage function
   end
-    puts "What would you like to do?".foreground(:red)
-    puts "Use (b)asic, (a)dvanced, (bm)i, (m)ortgage, (q)uit".background(:green)
+    puts "What would you like to do?".foreground(:green)
+    puts "Use (b)asic, (a)dvanced, (bm)i, (m)ortgage, (q)uit".background(:red)
     you = gets.chomp.downcase
 end
 
