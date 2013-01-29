@@ -1,3 +1,5 @@
+require 'rainbow'
+
 puts "What would you like to do?"
 puts "Use Basic Calculator(bc), Use Advanced Calculator(ac), Quit(q)?"
 you = gets.chomp.downcase
@@ -46,11 +48,22 @@ def basic_calc
   end
 end
 
+def bmi_calc
+  print "What is your weight? (lbs/kg) "
+  weight = gets.chomp.to_f
+  print "What is your height? (inches/meters) "
+  height = gets.chomp.to_f
+  puts "Your BMI is #{weight/(height*2)} (Press any key to continue)"
+  gets
+end
+
 while you != "q"
   if you == "bc"
     basic_calc
   elsif you == "ac"
     advcalc
+  elsif you == "bm"
+    bmi_calc
   end
     puts "What would you like to do?"
     puts "Use Basic Calculator(bc), Use Advanced Calculator(ac), Quit(q)?"
