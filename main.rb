@@ -82,21 +82,13 @@ def trip_calc
   print "Please enter the mph "
   mph = gets.chomp.to_f
 
-  def trip_time_calc (distance, mph)
-    distance / mph
-  end
-
-  def trip_cost_calc (cpg, mpg, distance)
-    (cpg / mpg) * distance
-  end
-
   if mph > 60
     mpg = mpg - (2 * (mph - 60))
   end
 
-  trip_time = trip_time_calc(distance, mph)
+  trip_time = distance / mph
 
-  trip_cost = trip_cost_calc(cpg, mpg, distance)
+  trip_cost = (cpg / mpg) * distance
 
   puts "Your trip will take #{trip_time.round(2)} hours and cost $#{trip_cost.round(2)}."
 end
@@ -111,6 +103,7 @@ while you != "q"
   elsif you == "m"
     mort_calc
   elsif you == "t"
+    trip_calc
   end
     puts "What would you like to do?".foreground(:green)
     puts "Use (b)asic, (a)dvanced, (bm)i, (m)ortgage, (t)rip, (q)uit".background(:red)
